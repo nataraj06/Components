@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Components</string>
+
+    <string name="home_activity">Activity</string>
+    <string name="home_fragment">Fragment</string>
+    <string name="home_service">Service</string>
+    <string name="home_intent">Intent</string>
+    <string name="home_intent_service">Intent Service</string>
+    <string name="home_notification">Notification</string>
+    <string name="home_thread">Thread Concept</string>
+    <string name="home_networking">Networking Concept Get Request</string>
+    <string name="home_data_storage">Data Storage</string>
+
+    <string name="fragment_a">Fragment A</string>
+    <string name="fragment_b">Fragment B</string>
+
+    <!--strings for intent-->
+    <string name="intent_implicit_intents">Implicit intent</string>
+    <string name="intent_explicit_intents">Explicit intent</string>
+    <string name="intent_start_activity_for_result">Start Activity For Result</string>
+    <string name="intent_share_intent">Share Intent</string>
+    <string name="intent_submit_btn">Submit</string>
+    <string name="intent_result_enter_value">Enter the value to pass to previous activity</string>
+
+    <!--strings for services-->
+    <string name="service_start">Start Service</string>
+    <string name="service_stop">Stop Service</string>
+    <string name="service_start_bind">Start Bind Service</string>
+    <string name="service_un_bind">UnBind Service</string>
+    <string name="service_get_value">Get Value From Service</string>
+    <string name="service_intent_service">Start IntentService</string>
+    <string name="service_bind_service_message">Stop and start as bind service to get value from My Service</string>
+
+</resources>
