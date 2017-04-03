@@ -1,5 +1,6 @@
 package com.android.components.services;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,7 @@ public class ServicesDemoActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.service_start_btn:
+                startService(new Intent(ServicesDemoActivity.this, MyService.class));
                 break;
             case R.id.service_stop_btn:
                 break;
