@@ -80,7 +80,14 @@ public class IntentDemoActivity extends AppCompatActivity implements View.OnClic
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
         sendIntent.setType("text/plain");
-        startActivity(sendIntent);
+        /*resolveHowever, it is possible that there are no applications that can handle your intent.
+        In this case, your application will crash when you invoke startActivity().
+         To avoid this, before calling startActivity() you should first verify that there is at
+        least one application registered in the system that can handle the intent.
+         To do this use resolveActivity() on your intent object:*/
+        if (sendIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(sendIntent);
+        }
     }
 
     private void sendBinaryContent() {
@@ -90,7 +97,14 @@ public class IntentDemoActivity extends AppCompatActivity implements View.OnClic
         shareIntent.setAction(Intent.ACTION_SEND);
         shareIntent.putExtra(Intent.EXTRA_STREAM, uriToImage);
         shareIntent.setType("image/jpeg");
-        startActivity(Intent.createChooser(shareIntent, "send to"));
+        /*resolveHowever, it is possible that there are no applications that can handle your intent.
+        In this case, your application will crash when you invoke startActivity().
+         To avoid this, before calling startActivity() you should first verify that there is at
+        least one application registered in the system that can handle the intent.
+         To do this use resolveActivity() on your intent object:*/
+        if (shareIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(Intent.createChooser(shareIntent, "send to"));
+        }
     }
 
     private void sendMutipleContent() {
@@ -105,6 +119,13 @@ public class IntentDemoActivity extends AppCompatActivity implements View.OnClic
         shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
         shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, imageUris);
         shareIntent.setType("image/*");
-        startActivity(Intent.createChooser(shareIntent, "Share images to.."));
+        /*resolveHowever, it is possible that there are no applications that can handle your intent.
+        In this case, your application will crash when you invoke startActivity().
+         To avoid this, before calling startActivity() you should first verify that there is at
+        least one application registered in the system that can handle the intent.
+         To do this use resolveActivity() on your intent object:*/
+        if (shareIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(Intent.createChooser(shareIntent, "Share images to.."));
+        }
     }
 }
