@@ -28,6 +28,19 @@
             android:enabled="true"
             android:exported="true" />
 
+
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>
