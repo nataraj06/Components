@@ -25,10 +25,15 @@
     <!--strings for services-->
     <string name="service_start">Start Service</string>
     <string name="service_stop">Stop Service</string>
-    <string name="service_start_bind">Start Bind Service</string>
-    <string name="service_un_bind">UnBind Service</string>
-    <string name="service_get_value">Get Value From Service</string>
-    <string name="service_intent_service">Start IntentService</string>
-    <string name="service_bind_service_message">Stop and start as bind service to get value from My Service</string>
+    <string name="service_start_bind">Start Bound Service</string>
+    <string name="service_intent_service">Start Intent Service</string>
+    <string name="service_ipc">Inter Process Communication</string>
+
+    <string name="service_title_text_for_bound_service">Please enter any two numbers to perform operations</string>
+    <string name="service_title_text_for_ipc">Please enter any two numbers to perform inter process communication</string>
+    <string name="service_add_button">Add</string>
+    <string name="service_sub_button">Subtract</string>
+    <string name="service_bind">Bind service</string>
+    <string name="service_unbind">UnBind service</string>
 
 </resources>
