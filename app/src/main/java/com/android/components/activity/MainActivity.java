@@ -11,6 +11,8 @@ import com.android.components.services.ServicesDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    final private String TAG = MainActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -17,10 +17,8 @@ public class IntentResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intent_result);
-
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         final EditText resultEtxt = (EditText) findViewById(R.id.intent_result_name_et);
 
@@ -43,5 +41,4 @@ public class IntentResultActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
 }

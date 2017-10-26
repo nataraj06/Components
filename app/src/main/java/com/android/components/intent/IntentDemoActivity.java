@@ -66,13 +66,12 @@ public class IntentDemoActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (data != null) {
-
-            if (data.hasExtra("result")) {
+            if (data.hasExtra("result") && requestCode == REQUEST_FOR_RESULT_VALUE) {
                 Toast.makeText(this, data.getStringExtra("result"), Toast.LENGTH_LONG).show();
             }
         }
-        super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void sendTextContent() {
@@ -80,7 +79,7 @@ public class IntentDemoActivity extends AppCompatActivity implements View.OnClic
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
         sendIntent.setType("text/plain");
-        /*resolveHowever, it is possible that there are no applications that can handle your intent.
+        /*resolveHowever, it is not possible that there are no applications that can handle your intent.
         In this case, your application will crash when you invoke startActivity().
          To avoid this, before calling startActivity() you should first verify that there is at
         least one application registered in the system that can handle the intent.
@@ -97,7 +96,7 @@ public class IntentDemoActivity extends AppCompatActivity implements View.OnClic
         shareIntent.setAction(Intent.ACTION_SEND);
         shareIntent.putExtra(Intent.EXTRA_STREAM, uriToImage);
         shareIntent.setType("image/jpeg");
-        /*resolveHowever, it is possible that there are no applications that can handle your intent.
+        /*resolveHowever, it is not possible that there are no applications that can handle your intent.
         In this case, your application will crash when you invoke startActivity().
          To avoid this, before calling startActivity() you should first verify that there is at
         least one application registered in the system that can handle the intent.
@@ -119,7 +118,7 @@ public class IntentDemoActivity extends AppCompatActivity implements View.OnClic
         shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
         shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, imageUris);
         shareIntent.setType("image/*");
-        /*resolveHowever, it is possible that there are no applications that can handle your intent.
+        /*resolveHowever, it is not possible that there are no applications that can handle your intent.
         In this case, your application will crash when you invoke startActivity().
          To avoid this, before calling startActivity() you should first verify that there is at
         least one application registered in the system that can handle the intent.

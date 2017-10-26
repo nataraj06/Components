@@ -40,6 +40,7 @@ public class ServicesDemoActivity extends AppCompatActivity implements View.OnCl
                 startService(new Intent(ServicesDemoActivity.this, MyService.class));
                 break;
             case R.id.service_stop_btn:
+                stopService(new Intent(ServicesDemoActivity.this, MyService.class));
                 break;
             case R.id.service_start_bind_btn:
                 break;
@@ -48,6 +49,9 @@ public class ServicesDemoActivity extends AppCompatActivity implements View.OnCl
             case R.id.service_bind_get_value_btn:
                 break;
             case R.id.service_intent_service_btn:
+                Intent intent = new Intent(ServicesDemoActivity.this, MyIntentService.class);
+                intent.putExtra("sleepTime", 5);
+                startService(intent);
                 break;
             default:
                 break;
