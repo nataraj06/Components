@@ -1,11 +1,7 @@
 package com.android.components.activity;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -15,7 +11,6 @@ import com.android.components.services.ServicesDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final int REQUEST_CODE_ASK_SMS_PERMISSIONS = 124;
     final private String TAG = MainActivity.class.getSimpleName();
 
     @Override
@@ -30,15 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         (findViewById(R.id.home_thread_btn)).setOnClickListener(this);
         (findViewById(R.id.home_data_storage_btn)).setOnClickListener(this);
         (findViewById(R.id.home_networking_btn)).setOnClickListener(this);
-
-        // Read SMS permission
-        int smsPermissionCheck = ContextCompat.checkSelfPermission(MainActivity.this,
-                Manifest.permission.READ_SMS);
-        //To check the read sms permission granted
-        if (smsPermissionCheck != PackageManager.PERMISSION_GRANTED) {
-            // Request dialog and get permission from the user to read sms
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_SMS}, REQUEST_CODE_ASK_SMS_PERMISSIONS);
-        }
     }
 
     @Override
