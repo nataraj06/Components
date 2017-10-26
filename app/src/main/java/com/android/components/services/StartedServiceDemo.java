@@ -8,11 +8,11 @@ import android.widget.Toast;
 import com.android.components.utils.PlaySound;
 
 
-public class MyService extends Service {
+public class StartedServiceDemo extends Service {
 
     private PlaySound playSound;
 
-    public MyService() {
+    public StartedServiceDemo() {
     }
 
     @Override

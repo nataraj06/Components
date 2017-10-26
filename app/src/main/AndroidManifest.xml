@@ -27,16 +27,18 @@
         <activity android:name=".intent.IntentResultActivity"></activity>
         <activity android:name=".intent.ExplicitIntentDemoActivity"></activity>
         <activity android:name=".services.ServicesDemoActivity"></activity>
+        <activity android:name=".services.BoundServiceActivityDemo"></activity>
+        <activity android:name=".services.MessengerServiceActivityDemo"></activity>
 
         <service
-            android:name=".services.MyService"
+            android:name=".services.StartedServiceDemo"
             android:enabled="true"
             android:exported="true" />
-
+        <service android:name=".services.IntentServiceDemo" />
+        <service android:name=".services.BoundServiceDemo"></service>
         <service
-            android:name=".services.MyIntentService"
-            android:enabled="true"
-            android:exported="false" />
+            android:name=".services.MessengerServiceDemo"
+            android:process=":own_process_for_messenger_service"></service>
 
     </application>
 

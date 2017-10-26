@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/service_title_text_for_ipc"
+        android:textColor="@color/colorAccent"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/activity_messenger_service_num_input_one_etxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/activity_messenger_service_num_input_two_etxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/activity_messenger_service_add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickEvent"
+        android:text="@string/service_add_button" />
+
+    <Button
+        android:layout_marginTop="100dp"
+        android:id="@+id/activity_messenger_service_bind_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="performBindService"
+        android:text="@string/service_bind" />
+
+    <Button
+        android:id="@+id/activity_messenger_service_unbind_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="performUnBindService"
+        android:text="@string/service_unbind" />
+
+</LinearLayout>

@@ -22,29 +22,22 @@
         android:layout_height="wrap_content"
         android:text="@string/service_stop" />
 
-
     <Button
-        android:id="@+id/service_start_bind_btn"
+        android:id="@+id/service_bound_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/service_start_bind" />
-
-    <Button
-        android:id="@+id/service_un_bind_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/service_un_bind" />
-
-    <Button
-        android:id="@+id/service_bind_get_value_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/service_get_value" />
 
     <Button
         android:id="@+id/service_intent_service_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/service_intent_service" />
+
+    <Button
+        android:id="@+id/service_ipc_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/service_ipc" />
 
 </LinearLayout>
