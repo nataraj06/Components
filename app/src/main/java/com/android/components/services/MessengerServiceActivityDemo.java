@@ -14,9 +14,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.android.components.R;
+import com.android.components.utils.UIUtil;
 
 public class MessengerServiceActivityDemo extends AppCompatActivity {
 
@@ -33,7 +33,7 @@ public class MessengerServiceActivityDemo extends AppCompatActivity {
                 case 444:
                     Bundle bundle = msg.getData();
                     int result = bundle.getInt("result", 0);
-                    showToast("Result: " + result);
+                    UIUtil.showToast(MessengerServiceActivityDemo.this, "Result: " + result);
                     break;
                 default:
                     break;
@@ -46,13 +46,13 @@ public class MessengerServiceActivityDemo extends AppCompatActivity {
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             mIsBound = true;
             mService = new Messenger(iBinder);
-            showToast("Activity:: onServiceConnected(...)");
+            UIUtil.showToast(MessengerServiceActivityDemo.this, "Activity:: onServiceConnected(...)");
         }
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
             mIsBound = false;
-            showToast("Activity:: onServiceDisconnected(...)");
+            UIUtil.showToast(MessengerServiceActivityDemo.this, "Activity:: onServiceDisconnected(...)");
         }
     };
 
@@ -90,7 +90,7 @@ public class MessengerServiceActivityDemo extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else {
-            showToast("Please bind your service to perform action");
+            UIUtil.showToast(this, "Please bind your service to perform action");
         }
     }
 
@@ -104,9 +104,5 @@ public class MessengerServiceActivityDemo extends AppCompatActivity {
             unbindService(mConnection);
             mIsBound = false;
         }
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

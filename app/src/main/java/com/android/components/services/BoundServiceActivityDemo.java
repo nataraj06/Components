@@ -9,9 +9,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.android.components.R;
+import com.android.components.utils.UIUtil;
 
 public class BoundServiceActivityDemo extends AppCompatActivity {
 
@@ -24,12 +24,12 @@ public class BoundServiceActivityDemo extends AppCompatActivity {
             BoundServiceDemo.MyBinder myBinder = (BoundServiceDemo.MyBinder) iBinder;
             boundServiceDemo = myBinder.getService();
             isBound = true;
-            showToast("Activity:: onServiceConnected(...)");
+            UIUtil.showToast(BoundServiceActivityDemo.this, "Activity:: onServiceConnected(...)");
         }
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
-            showToast("Activity:: onServiceDisconnected(...)");
+            UIUtil.showToast(BoundServiceActivityDemo.this, "Activity:: onServiceDisconnected(...)");
             isBound = false;
         }
     };
@@ -86,10 +86,6 @@ public class BoundServiceActivityDemo extends AppCompatActivity {
                     break;
             }
         }
-        showToast("Result is " + resultString);
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        UIUtil.showToast(this, "Result is " + resultString);
     }
 }

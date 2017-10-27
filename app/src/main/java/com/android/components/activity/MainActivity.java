@@ -9,7 +9,7 @@ import com.android.components.R;
 import com.android.components.intent.IntentDemoActivity;
 import com.android.components.services.ServicesDemoActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     final private String TAG = MainActivity.class.getSimpleName();
 

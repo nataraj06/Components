@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
+
+import com.android.components.utils.UIUtil;
 
 public class BoundServiceDemo extends Service {
 
@@ -24,20 +25,20 @@ public class BoundServiceDemo extends Service {
 
     @Override
     public boolean onUnbind(Intent intent) {
-        showToast("Service:: onUnbind(...)");
+        UIUtil.showToast(this, "Service:: onUnbind(...)");
         return super.onUnbind(intent);
     }
 
     @Override
     public void onRebind(Intent intent) {
-        showToast("Service:: onRebind(...)");
+        UIUtil.showToast(this, "Service:: onRebind(...)");
         super.onRebind(intent);
     }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        showToast("Service:: onBind(...)");
+        UIUtil.showToast(this, "Service:: onBind(...)");
         return myBinder;
     }
 
@@ -49,7 +50,4 @@ public class BoundServiceDemo extends Service {
         return a - b;
     }
 
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
 }

@@ -6,9 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.android.components.R;
+import com.android.components.utils.UIUtil;
 
 
 public class FragmentA extends Fragment {
@@ -22,7 +22,7 @@ public class FragmentA extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        showToast("Fragment:: onAttach(...)");
+        UIUtil.showToast(getActivity(), "Fragment:: onAttach(...)");
 
         try {
             mListener = (OnFragmentInteractionListener) context;
@@ -35,26 +35,26 @@ public class FragmentA extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showToast("Fragment:: onCreate()");
+        UIUtil.showToast(getActivity(), "Fragment:: onCreate()");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        showToast("Fragment:: onCreateView(...)");
+        UIUtil.showToast(getActivity(), "Fragment:: onCreateView(...)");
         return inflater.inflate(R.layout.fragment_a, container, false);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        showToast("Fragment:: onActivityCreated(...)");
+        UIUtil.showToast(getActivity(), "Fragment:: onActivityCreated(...)");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        showToast("Fragment:: onResume()");
+        UIUtil.showToast(getActivity(), "Fragment:: onResume()");
         if (mListener != null) {
             mListener.onFragmentInteraction("FragmentA");
         }
@@ -63,29 +63,25 @@ public class FragmentA extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        showToast("Fragment:: onPause()");
+        UIUtil.showToast(getActivity(), "Fragment:: onPause()");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        showToast("Fragment:: onDestroyView()");
+        UIUtil.showToast(getActivity(), "Fragment:: onDestroyView()");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        showToast("Fragment:: onDestroy()");
+        UIUtil.showToast(getActivity(), "Fragment:: onDestroy()");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        showToast("Fragment:: onDetach()");
+        UIUtil.showToast(getActivity(), "Fragment:: onDetach()");
         mListener = null;
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }

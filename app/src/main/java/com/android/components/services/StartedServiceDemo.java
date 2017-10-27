@@ -6,6 +6,7 @@ import android.os.IBinder;
 import android.widget.Toast;
 
 import com.android.components.utils.PlaySound;
+import com.android.components.utils.UIUtil;
 
 
 public class StartedServiceDemo extends Service {
@@ -18,13 +19,13 @@ public class StartedServiceDemo extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        showToast("Service:: OnCreate()" + " " + Thread.currentThread().getName().toString());
+        UIUtil.showToast(this, "Service:: OnCreate()" + " " + Thread.currentThread().getName().toString());
         playSound = new PlaySound(this);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        showToast("Service:: onStartCommand(...)" + " " + Thread.currentThread().getName().toString());
+        UIUtil.showToast(this, "Service:: onStartCommand(...)" + " " + Thread.currentThread().getName().toString());
         playSound.start();
         //By defult android will shut down the components when low memory cases
         //There are some flags to handle this
@@ -36,16 +37,12 @@ public class StartedServiceDemo extends Service {
     public void onDestroy() {
         super.onDestroy();
         playSound.stop();
-        showToast("Service:: onDestroy()" + " " + Thread.currentThread().getName().toString());
+        UIUtil.showToast(this, "Service:: onDestroy()" + " " + Thread.currentThread().getName().toString());
     }
 
     @Override
     public IBinder onBind(Intent intent) {
-        showToast("Service:: onBind(...)" + " " + Thread.currentThread().getName().toString());
+        UIUtil.showToast(this, "Service:: onBind(...)" + " " + Thread.currentThread().getName().toString());
         return null;
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }
