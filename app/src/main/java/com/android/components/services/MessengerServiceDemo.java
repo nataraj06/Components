@@ -10,7 +10,8 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
+
+import com.android.components.utils.UIUtil;
 
 public class MessengerServiceDemo extends Service {
 
@@ -50,28 +51,24 @@ public class MessengerServiceDemo extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        showToast("Service:: onbind(...)");
+        UIUtil.showToast(this, "Service:: onbind(...)");
         return mMessenger.getBinder();
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
-        showToast("Service:: onUnbind(...)");
+        UIUtil.showToast(this, "Service:: onUnbind(...)");
         return super.onUnbind(intent);
     }
 
     @Override
     public void onRebind(Intent intent) {
-        showToast("Service:: onRebind(...)");
+        UIUtil.showToast(this, "Service:: onRebind(...)");
         super.onRebind(intent);
     }
 
 
     public static int add(int a, int b) {
         return a + b;
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

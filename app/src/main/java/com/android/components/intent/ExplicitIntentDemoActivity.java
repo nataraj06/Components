@@ -7,8 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.android.components.R;
+import com.android.components.activity.BaseActivity;
 
-public class ExplicitIntentDemoActivity extends AppCompatActivity {
+public class ExplicitIntentDemoActivity extends BaseActivity {
+
+    public ExplicitIntentDemoActivity() {
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -3,17 +3,16 @@ package com.android.components.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.android.components.R;
 import com.android.components.activity.fragments.FragmentA;
 import com.android.components.activity.fragments.FragmentB;
 import com.android.components.activity.fragments.OnFragmentInteractionListener;
+import com.android.components.utils.UIUtil;
 
-public class DemoFragmentActivity extends AppCompatActivity implements OnFragmentInteractionListener {
+public class DemoFragmentActivity extends BaseActivity implements OnFragmentInteractionListener {
 
     private static final int FRAGMENT_A = 0;
     private static final int FRAGMENT_B = 1;
@@ -22,7 +21,7 @@ public class DemoFragmentActivity extends AppCompatActivity implements OnFragmen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_demo);
-        showToast("Activity:: onCreate()");
+        UIUtil.showToast(this, "Activity:: onCreate()");
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -30,45 +29,45 @@ public class DemoFragmentActivity extends AppCompatActivity implements OnFragmen
     @Override
     protected void onStart() {
         super.onStart();
-        showToast("Activity:: onStart()");
+        UIUtil.showToast(this, "Activity:: onStart()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        showToast("Activity:: onResume()");
+        UIUtil.showToast(this, "Activity:: onResume()");
     }
 
 
     @Override
     protected void onPause() {
         super.onPause();
-        showToast("Activity:: onPause()");
+        UIUtil.showToast(this, "Activity:: onPause()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        showToast("Activity:: onStop()");
+        UIUtil.showToast(this, "Activity:: onStop()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        showToast("Activity:: onDestroy()");
+        UIUtil.showToast(this, "Activity:: onDestroy()");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        showToast("Activity:: onRestart()");
+        UIUtil.showToast(this, "Activity:: onRestart()");
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        showToast("Activity:: onCreateOptionsMenu(Menu menu)");
+        UIUtil.showToast(this, "Activity:: onCreateOptionsMenu(Menu menu)");
         return true;
     }
 
@@ -78,7 +77,7 @@ public class DemoFragmentActivity extends AppCompatActivity implements OnFragmen
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        showToast("Activity:: onOptionsItemSelected(MenuItem item)");
+        UIUtil.showToast(this, "Activity:: onOptionsItemSelected(MenuItem item)");
         if (id == R.id.action_home) {
             displayView(FRAGMENT_A);
             return true;
@@ -136,11 +135,6 @@ public class DemoFragmentActivity extends AppCompatActivity implements OnFragmen
         } else {
             super.onBackPressed();
         }
-        showToast("Activity:: onBackPressed()");
-    }
-
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        UIUtil.showToast(this, "Activity:: onBackPressed()");
     }
 }

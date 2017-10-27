@@ -7,9 +7,9 @@ import android.os.ResultReceiver;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.android.components.R;
+import com.android.components.utils.UIUtil;
 
 public class ServicesDemoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -80,14 +80,10 @@ public class ServicesDemoActivity extends AppCompatActivity implements View.OnCl
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        showToast(resultString + "Toast shown from the calling component");
+                        UIUtil.showToast(ServicesDemoActivity.this, resultString + "Toast shown from the calling component");
                     }
                 });
             }
         }
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
