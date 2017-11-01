@@ -2,12 +2,12 @@ package com.android.components.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.android.components.R;
 import com.android.components.intent.IntentDemoActivity;
 import com.android.components.services.ServicesDemoActivity;
+import com.android.components.threads.ThreadDemoActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -41,6 +41,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.home_service_btn:
                 startActivity(new Intent(MainActivity.this, ServicesDemoActivity.class));
+                break;
+            case R.id.home_thread_btn:
+                startActivity(new Intent(MainActivity.this, ThreadDemoActivity.class));
+                break;
             default:
                 break;
         }

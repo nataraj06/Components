@@ -29,6 +29,7 @@
         <activity android:name=".services.ServicesDemoActivity"></activity>
         <activity android:name=".services.BoundServiceActivityDemo"></activity>
         <activity android:name=".services.MessengerServiceActivityDemo"></activity>
+        <activity android:name=".threads.ThreadDemoActivity"></activity>
 
         <service
             android:name=".services.StartedServiceDemo"
