@@ -36,4 +36,13 @@
     <string name="service_bind">Bind service</string>
     <string name="service_unbind">UnBind service</string>
 
+    <!--strings for threads-->
+    <string name="thread_run_on_ui">Activity.runOnUiThread (Runnable)</string>
+    <string name="thread_view_post">View.post (Runnable)</string>
+    <string name="thread_view_post_delay">View.postDelayed (Runnable, long)</string>
+    <string name="thread_asyc_task">AsyncTask</string>
+
+    <!--strings for threads-->
+    <string name="notification_local_btn">Local Notification</string>
+
 </resources>
