@@ -20,7 +20,6 @@ import java.io.InputStream;
 public class ThreadDemoActivity extends AppCompatActivity implements View.OnClickListener {
     final private String TAG = ThreadDemoActivity.class.getSimpleName();
 
-    private ProgressBar progressBar;
     private String url = "https://content-static.upwork.com/blog/uploads/sites/3/2016/08/24161340/AsyncTask.png";
 
     @Override
@@ -31,7 +30,6 @@ public class ThreadDemoActivity extends AppCompatActivity implements View.OnClic
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        progressBar = (ProgressBar) findViewById(R.id.thread_progress_bar);
         (findViewById(R.id.thread_run_on_ui_btn)).setOnClickListener(this);
         (findViewById(R.id.thread_view_post_btn)).setOnClickListener(this);
         (findViewById(R.id.thread_view_post_delay_btn)).setOnClickListener(this);
@@ -87,8 +85,9 @@ public class ThreadDemoActivity extends AppCompatActivity implements View.OnClic
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.thread_progress_bar);
 
-        private DownloadImageTask(ImageView imageView) {
+        public DownloadImageTask(ImageView imageView) {
             this.imageView = imageView;
         }
 

@@ -30,6 +30,7 @@
         <activity android:name=".services.BoundServiceActivityDemo"></activity>
         <activity android:name=".services.MessengerServiceActivityDemo"></activity>
         <activity android:name=".threads.ThreadDemoActivity"></activity>
+        <activity android:name=".notification.NotificationActivity"></activity>
 
         <service
             android:name=".services.StartedServiceDemo"
@@ -40,6 +41,24 @@
         <service
             android:name=".services.MessengerServiceDemo"
             android:process=":own_process_for_messenger_service"></service>
+
+        <!-- Firebase Notifications -->
+        <service
+            android:name=".notification.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".notification.MyFirebaseInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
 
     </application>
 

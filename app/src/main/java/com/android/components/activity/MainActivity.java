@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.android.components.R;
 import com.android.components.intent.IntentDemoActivity;
+import com.android.components.notification.NotificationActivity;
 import com.android.components.services.ServicesDemoActivity;
 import com.android.components.threads.ThreadDemoActivity;
 
@@ -44,6 +45,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.home_thread_btn:
                 startActivity(new Intent(MainActivity.this, ThreadDemoActivity.class));
+                break;
+            case R.id.home_notification_btn:
+                startActivity(new Intent(MainActivity.this, NotificationActivity.class));
                 break;
             default:
                 break;
